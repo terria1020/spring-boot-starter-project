@@ -1,0 +1,15 @@
+springdoc:
+  swagger-ui:
+    path: /swagger-ui # 경로 설정
+    groups-order: ASC # 각 그룹의 정렬 설정
+    operationsSorter: controller # 정렬 기준
+    disable-swagger-default-url: true # 기본 swagger-ui url 무시 설정
+    display-request-duration: true
+  api-docs:
+    path: /api-docs # api documentation 원본 문서 url 설정
+  show-actuator: true # spring boot actuator 나타내는 설정
+  default-consumes-media-type: application/json
+  default-produces-media-type: application/json
+  paths-to-match: # 매칭 path
+    - /api/v1/**
+    - /actuator/*

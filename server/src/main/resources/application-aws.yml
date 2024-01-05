@@ -1,0 +1,17 @@
+cloud:
+  aws:
+    credentials:
+      access-key: ${AMAZON_ACCESS_KEY}
+      secret-key: ${AMAZON_SECRET_KEY}
+    s3:
+      bucket: ${AMAZON_S3_BUCKET}
+    region:
+      static: ${AMAZON_REGION}
+    stack:
+      auto: false
+
+extends:
+  cloud:
+    aws:
+      s3:
+        bucket-url: ${AMAZON_S3_BUCKET_URL}

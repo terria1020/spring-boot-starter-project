@@ -1,0 +1,7 @@
+management: # spring-boot-actuator 설정
+  endpoint:
+    web:
+      exposure:
+        include: health # health endpoint 추가
+    health:
+      show-details: always # health 자세한 정보 추가
