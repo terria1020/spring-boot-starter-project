@@ -1,0 +1,3 @@
+extends:
+  firebase:
+    admin-key-path: ${FIREBASE_ADMIN_KEY_PATH}
