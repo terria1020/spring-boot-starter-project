@@ -182,6 +182,7 @@ Temporary Items
 **/build/
 !src/**/build/
 **/server/.gradle
+server/.gradle/8.2.1/**
 ./server/.gradle
 server/.gradle/**
 
