@@ -1,0 +1,14 @@
+spring:
+  jpa:
+    database-platform: org.hibernate.dialect.MySQL8Dialect # mysql 버전을 따라가는 Hibernate 구현체 문법(방언) 설정
+    hibernate:
+      ddl-auto: validate # (ddl creation 설정) none, validate, create, create-drop
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver # 드라이버 이름
+    url: jdbc:mariadb://${DB_HOST}:${DB_PORT}/${DB_SCHEMA}
+    username: ${DB_USER}
+    password: ${DB_PASSWORD}

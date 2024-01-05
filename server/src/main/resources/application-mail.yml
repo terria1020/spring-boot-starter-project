@@ -1,0 +1,18 @@
+spring:
+  mail:
+    host: ${SMTP_HOST} # SMTP 서버 호스트
+    port: ${SMTP_PORT} # SMTP 서버 포트
+    username: ${SMTP_USER} # SMTP 계정 아이디
+    password: ${SMTP_PASSWORD} # SMTP 계정 비밀번호
+    properties:
+      mail:
+        smtp:
+          auth: true # 인증 설정
+          starttls:
+            enable: true # TLS 설정
+    protocol: ${SMTP_PROTOCOL} # (사용 프로토콜 설정) smtp, smtps, ..
+
+extends:
+  mail:
+    from: ${SMTP_FROM} # 송신 메일 주소
+    from-name: ${SMTP_FROM_NAME} # 송신자 이름
