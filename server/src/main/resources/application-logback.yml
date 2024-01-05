@@ -1,0 +1,8 @@
+logging:
+  config: classpath:logback-local.xml
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace

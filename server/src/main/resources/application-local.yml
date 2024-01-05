@@ -26,12 +26,3 @@ spring:
 extends: # 기타 설정하고 싶은 외부 환경변수 등
   jwt:
     secret-key: ${JWT_SECRET_KEY}
-
-logging:
-  config: classpath:logback-local.xml
-  level:
-    org:
-      hibernate:
-        type:
-          descriptor:
-            sql: trace
