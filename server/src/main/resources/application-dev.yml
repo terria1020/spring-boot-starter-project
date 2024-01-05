@@ -1,0 +1,37 @@
+server:
+  port: ${SERVER_PORT}
+
+spring:
+  servlet:
+    multipart:
+      enabled: true
+      max-file-size: ${SERVLET_MAX_FILE_SIZE} # 서블릿 multipart 관련 최대 파일 크기 설정, 예시 값: 100mb
+      max-request-size: ${SERVLET_MAX_REQUEST_SIZE} # 서블릿 multipart 관련 최대 요청 크기 설정, 예시 값: 100mb
+  mvc:
+    pathmatch:
+      matching-strategy: ant_path_matcher
+  config:
+    activate:
+      on-profile: dev
+  data:
+    web:
+      pageable:
+        default-page-size: ${DATA_WEB_DEFAULT_PAGE_SIZE} # paging 관련 기본 페이지 수 설정, 예시 값: 30
+        max-page-size: ${DATA_WEB_MAX_PAGE_SIZE} # paging 관련 최대 페이지 수 설정, 예시 값: 300
+        one-indexed-parameters: true
+        page-parameter: page
+  jackson:
+    property-naming-strategy: SNAKE_CASE
+
+extends: # 기타 설정하고 싶은 외부 환경변수 등
+  jwt:
+    secret-key: ${JWT_SECRET_KEY}
+
+logging:
+  config: classpath:logback-local.xml
+  level:
+    org:
+      hibernate:
+        type:
+          descriptor:
+            sql: trace
